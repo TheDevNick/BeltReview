@@ -1,6 +1,7 @@
 package com.codingdojo.beltReview.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -30,6 +31,15 @@ public class Message {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	   @ManyToOne(fetch=FetchType.LAZY)
+		@JoinColumn(name="userMessage_id")
+		private User host;
+	   
+	   @ManyToOne(fetch=FetchType.LAZY)
+		@JoinColumn(name="eventMessage_id")
+		private Event event;
+	
 
 	@Column(updatable=false)
     private Date createdAt;

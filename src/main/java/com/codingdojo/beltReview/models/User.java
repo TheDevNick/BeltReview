@@ -40,10 +40,10 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
     
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="planner")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="host")
     private List<Event> eventsPlanned;
     
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="author")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="host")
     private List<Message> messages;
     
     @ManyToMany(fetch=FetchType.LAZY)
