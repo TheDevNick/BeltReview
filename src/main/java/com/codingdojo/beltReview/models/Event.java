@@ -22,6 +22,21 @@ public class Event {
     private Date createdAt;
     private Date updatedAt;
     
+    @ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="host_id")
+	private User host;
+    
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="event")
+    private List<Message> eventMessages;
+
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(
+		name="users_events",
+		joinColumns = @JoinColumn(name="event_id"),
+		inverseJoinColumns = @JoinColumn(name="user_id")
+	)
+    private List<User> usersEvents;
+    
 	public Long getId() {
 		return id;
 	}
