@@ -1,0 +1,41 @@
+<head th:replace="fragments:: header"></head>
+<div class="container-fluid">
+	<h1 th:text="${event.eventName}"> </h1>
+	<ul>
+		<li></li>
+		<li th:text="|Host: ${user.firstName}|"></li>
+		<li th:text="|Date: ${event.eventDate}|"></li>
+		<li th:text="|Location: ${event.city}, ${event.state}|"></li>
+		<li th:text="|People who are attending the event: ${event.userEvents.Count()}|"></li>
+	</ul>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Location</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user: ${events}">
+				<td><span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></td>
+				<td><span th:text="${user.city}"></span> <span th:text="${user.state}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="container-fluid">
+	<h3>Message Wall</h3>
+	<div th:each="message: ${event.messages}">
+		<p th:text="|${ message.host.firstName } says: ${ message.content }|"></p>
+	</div>
+	<form action="/events/${event.id}/comment" th:object="${message}" method="post">
+		<div class="form-group">
+			<label for="comment">Add Comment</label>
+			<textarea type="text" th:field="*{content}" placeholder="name"></textarea>
+			<button>Submit</button>
+		</div>
+	</form>
+	
+</div>
