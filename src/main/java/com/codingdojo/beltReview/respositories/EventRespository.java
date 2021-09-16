@@ -1,4 +1,4 @@
-package com.codingdojo.eventReview.respositories;
+package com.codingdojo.beltReview.respositories;
 
 public interface EventRespository {
 

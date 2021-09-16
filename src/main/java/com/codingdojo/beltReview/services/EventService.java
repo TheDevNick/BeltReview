@@ -1,4 +1,4 @@
-package com.codingdojo.eventReview.services;
+package com.codingdojo.beltReview.services;
 
 public class EventService {
 
