@@ -19,7 +19,8 @@ public class MessageService {
 		return this.repository.findAll();
 	}
 	
-	public Message createHero(Message message) {
+	//changed name of method from createHero to createMessage
+	public Message createMessage(Message message) {
 		return this.repository.save(message);
 	}
 	
