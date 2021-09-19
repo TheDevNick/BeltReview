@@ -35,7 +35,7 @@ public class Event {
 		joinColumns = @JoinColumn(name="event_id"),
 		inverseJoinColumns = @JoinColumn(name="user_id")
 	)
-    private List<User> usersEvents;
+    public List<User> usersEvents;
     
 	public Long getId() {
 		return id;

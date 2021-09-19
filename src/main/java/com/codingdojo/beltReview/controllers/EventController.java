@@ -49,7 +49,7 @@ public class EventController {
 	}
 	
 	//posting message to message board
-//	@PostMapping("/{id}/comment")
+//	@PostMapping("events/{id}/comment")
 //	public String Comment(@PathVariable("id") Long id, @RequestParam("comment") String comment, RedirectAttributes redirs, HttpSession session) {
 //		if(comment.equals("")) {
 //			redirs.addFlashAttribute("error", "Comment must not be blank");
