@@ -5,7 +5,7 @@
 		<li th:text="|Host: ${user.firstName} ${user.lastName}|"></li>
 		<li th:text="|Date: ${event.eventDate}|"></li>
 		<li th:text="|Location: ${event.city}, ${event.state}|"></li>
-		<li th:text="|People who are attending the event:|"></li>
+		<li th:text="|People who are attending the event: ${ event.usersEvents.size() }|"></li>
 		
 	</ul>
 
@@ -17,7 +17,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="user: ${events}">
+			<tr th:each="user: ${event.usersEvents}">
 				<td><span th:text="${user.firstName}"></span> <span th:text="${user.lastName}"></span></td>
 				<td><span th:text="${user.city}"></span> <span th:text="${user.state}"></span></td>
 			</tr>
