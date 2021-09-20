@@ -1,0 +1,22 @@
+<head th:fragment = "header">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Events</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link href="/css/style.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</head>
+	<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+		<ul class="nav-item">
+			<li class="nav-item">
+	          <a class="nav-link" href="/user/login">Login</a>
+	        </li>
+	        <li class="nav-item">
+     	 		<a class="nav-link" href="/user/register">Register</a>
+    		</li>
+			<li>
+				<a class="nav-link" href="/user/logout">Logout</a>
+			</li>			
+		</ul>
+	</nav>
