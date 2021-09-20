@@ -18,7 +18,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="event : ${inStateEvents}">
+						<tr th:each="event : ${inStateEvent}">
 							<td><a th:href="@{|event/${event.id}|}" th:text="${event.name}"></a></td>
 							<td th:text="${event.eventDate"></td>
 							<td th:text="${event.city}, ${event.state}"></td>

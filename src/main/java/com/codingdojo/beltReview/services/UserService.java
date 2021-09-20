@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.mindrot.jbcrypt.BCrypt;
+
+import com.codingdojo.beltReview.models.Event;
 import com.codingdojo.beltReview.models.User;
 import com.codingdojo.beltReview.respositories.UserRepository;
 
@@ -44,4 +46,25 @@ public class UserService {
     	
     	return null;
     }
+    
+    public User updateUser(Long id, User userUpdates) {
+		
+		User user = this.findById(id);
+		
+		if( user != null ) {
+			user.setFirstName(userUpdates.getFirstName());
+			user.setLastName(userUpdates.getLastName());
+			user.setEmail(userUpdates.getEmail());
+			user.setCity(userUpdates.getCity());
+			user.setState(userUpdates.getState());
+			this.save(user);
+			return user;
+		}
+		
+		return null;
+	}
+    
+    public void save(User user) {
+		this.repository.save(user);
+	}
 }

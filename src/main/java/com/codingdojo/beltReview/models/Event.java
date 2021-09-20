@@ -29,7 +29,7 @@ public class Event {
     @OneToMany(fetch=FetchType.LAZY, mappedBy="event")
     private List<Message> eventMessages;
 
-    @ManyToMany(fetch=FetchType.LAZY)
+	@ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(
 		name="users_events",
 		joinColumns = @JoinColumn(name="event_id"),
@@ -66,6 +66,24 @@ public class Event {
 	}
 	public void setState(String state) {
 		this.state = state;
+	}
+	public User getHost() {
+		return host;
+	}
+	public void setHost(User host) {
+		this.host = host;
+	}
+	public List<Message> getEventMessages() {
+		return eventMessages;
+	}
+	public void setEventMessages(List<Message> eventMessages) {
+		this.eventMessages = eventMessages;
+	}
+	public List<User> getUsersEvents() {
+		return usersEvents;
+	}
+	public void setUsersEvents(List<User> usersEvents) {
+		this.usersEvents = usersEvents;
 	}
 	
 	public Event() {
